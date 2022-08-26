@@ -71,11 +71,6 @@ p array
 =begin
 
 
-rescue => exception
-
-else
-
-end
 array = [0,1,2,3,4,5,6,7,8,9,10,11,3]
 
  p array.uniq  #does not mutate, however if uniq! is used it is mutated
@@ -112,6 +107,7 @@ array = [0,1,2,3,4,5,6,7,8,9,10,11,3]
 hash = {a:1, b:2, c:3, d:4}
 
   p hash[:b] # all that needs to be done is the hash followed by brackets and key to access the value
+
 p hash[:e] = 5 # to add a new pair use the hash followed by the brackets with the key. then assign it to the value to want
 
 hash.delete_if do |k,v| # anything within this method that evaluates as a truthy value will be deleted.
@@ -148,6 +144,7 @@ contact_data = [["joe@email.com", "123 Main st.", "555-123-4567"],
             ["sally@email.com", "404 Not Found Dr.", "123-234-3454"]]
 
 contacts = {"Joe Smith" => {}, "Sally Johnson" => {}}
+
 p contacts["Joe Smith"] # we enter the hash with the first key, "Joe smith" It is currently empty
  contacts["Joe Smith"][:email] = contact_data[0][0] #now we assign it to the contact_data array indexes that we want. There are two subarrays and since this Is Joe Smith we want the first one. [0]. now we know we want his email so within the first array we have to find the index with the email. that is [0]
  contacts["Joe Smith"][:address] = contact_data[0][1] # same idea here but now we change from email to address. which switched the second index to [1]
@@ -232,6 +229,8 @@ if hash1 == hash2
 else
   puts "These hashes are not the same!"
 end
+
+
 # although the hashes are in different orders. The key:value pairs are the same. Thus, they passed as true in the above program.
 
 # That is not the case for Arrays. They rely on order on their indexes.
@@ -254,6 +253,7 @@ contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]
 contacts = {"Joe Smith" => {}}
 
 
+The first prints 3 to the screen. The second throws an error undefined local variable or method because x is not available as it is created within the scope of the do/end block.
 fields =  [:email, :address, :phone] # first we must create an array with our key info that we need. In this case :email, :address, and :phone
 
 
